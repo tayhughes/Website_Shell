@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Taylor Hughes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <title>Login Page</title>
+  </head>
+  <body>
+    <header>
+    <%- include('../mainNavBar');%>
+    </header>
+
+    <main id="login-main-tag">
+        <form id="login-form" action="/user-login" method="post">
+            <h1>Sign In</h1>
+            <div>
+                <input id="username" name="username" type="text" placeholder="username"/>
+                <input id="password" name="password" type="password" placeholder="password"/>
+            </div>
+            <input id="login-submit-btn" type="submit" value="Login"/>
+            <p><a href="/create-user-login" title="Create New Account">Create Account</a></p>
+            <p><a href="/forgot-login">Forgot Username or Password?</a></p>
+        </form>
+    </main>
+    <%- include('../footer');%>
+  </body>
+</html>

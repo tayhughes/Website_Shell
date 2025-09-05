@@ -1,0 +1,52 @@
+<%const currentYear = new Date().getFullYear();
+const msg = {
+    footerMessage: `© Taylor Hughes ${currentYear}`
+}
+%>
+
+<footer>
+    <div id="footer-our-company" class="footer-div">
+        <p>Our Company</p>
+        <nav>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Future Plans</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="footer-social-media" class="footer-div">
+        <p>Social Media</p>
+        <nav>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="footer-resources" class="footer-div">
+        <p>Resources</p>
+        <nav>
+            <ul>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Photo Gallery</a></li>
+                <li><a href="#">Site Map</a></li>
+                <li><a href="#">Newsroom</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="footer-legal-and-copyright" class="footer-div">
+        <p>Privacy & Terms</p>
+        <nav>
+            <ul>
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">Disclaimers</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <p class="footer-copy-right"><%= msg.footerMessage %></p>
+</footer>
