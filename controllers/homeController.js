@@ -50,3 +50,11 @@ export const loginUserAccount = (request, response) => {
     // }
     
 };
+
+export const linkAttributesPage = (request, response) => {
+    response.sendFile(path.join(__dirname, '../public','src/attributes.html'));
+}
+
+export const pageUnderConstruction = (request, response) => {
+    response.sendFile(path.join(__dirname, '../public', 'src/construction.html'));
+}

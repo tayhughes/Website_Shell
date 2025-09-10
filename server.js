@@ -20,6 +20,11 @@ app.set('view engine', 'ejs');
 
 
 // This will allow us to use routes for directing the controller
+app.use((request,response,next) => {
+    response.locals.currentPath = request.path;
+    next();
+});
+
 app.use('/api', apiRoutes);
 app.use('/', apiRoutes);
 

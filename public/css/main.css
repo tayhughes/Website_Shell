@@ -2,6 +2,7 @@
     --blue: #5050e7;
     --dark-blue: #060691;
     --white: #ffffff;
+    --gray: #D3D3D3;
 }
 
 .collapsed{
@@ -15,6 +16,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: var(--blue);
 }
 
 header{
@@ -29,15 +31,24 @@ aside{
 
 main{
     height: auto;
+    background-color: var(--white);
 }
 
 /* mainNavBar */
-#mainNavBarDesktop {
+#mobile-hamburger-view{
+    display:  none;
+}
+
+#mobile-nav-bar{
+    display: none;
+}
+
+#main-nav-bar-desktop {
     width: 100%;
     height: 50px;
 }
 
-#mainNavBarDesktop ul {
+#main-nav-bar-desktop ul {
     text-align: center;
     height: 52px;
     width: 100%;
@@ -46,7 +57,7 @@ main{
     background-color: var(--blue);
 }
 
-#mainNavBarDesktop ul li {
+#main-nav-bar-desktop ul li {
     border-top: 1px solid var(--blue);
     border-bottom: 1px solid var(--blue);
     background-color: var(--blue);
@@ -57,7 +68,7 @@ main{
     list-style: none;
 }
 
-#mainNavBarDesktop a {
+#main-nav-bar-desktop a {
     display: block;
     height: 50px;
     width: 100px;
@@ -66,23 +77,33 @@ main{
     color: var(--white);
 }
 
-#mainNavBarDesktop a:hover {
+#main-nav-bar-desktop a:hover {
     color: var(--dark-blue);
     background-color: var(--white);
 }
 
-#mainNavBarDesktop ul li:last-child{
+#main-nav-bar-desktop ul li:last-child{
     float: right;
 }
 
 /* home */
 #home-main-tag{
-    min-height: 440px
+    min-height: 440px;
+    margin: 0;
+    padding: 0;
+}
+
+#home-main-tag h1{
+    margin: 0;
 }
 
 
 /* login */
 #login-main-tag{
+    margin: 0px;
+    padding: 0px;
+    padding-top: 10px;
+    padding-left: 20px;
     min-height: 440px;
 }
 
@@ -128,6 +149,8 @@ main{
     width: 160px;
     padding: 6px;
     margin-left: 100px;
+    background-color: var(--gray);
+    color: var(--dark-blue);
 }
 
 #login-form p {
@@ -188,12 +211,106 @@ p.footer-copy-right {
 
 @media only screen and (min-width: 380px) and (max-width: 784px){
     
+    /* Main Nav Bar for small screen */
+    header{
+        background-color: var(--blue);
+    }
+
+    #main-nav-bar-desktop {
+        display: none;
+    }
+
+    #mobile-hamburger-view{
+        display: inline-block;
+        height: 40px;
+        width: 100%;
+        
+    }
+
+    #mobile-hamburger-view label{
+        display: block;
+        float: left;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
+    #mobile-hamburger-view label[for="login-img-png"] {
+        margin-right: 15px;
+        margin-top: 5px;
+        float: right;
+    }
+
+    #mobile-hamburger-icon{
+        display: none;
+        height: 40px;
+        width: 40px;
+        opacity: 0;
+    }
+
+    #mobile-hamburger-icon:checked ~ #mobile-nav-bar {
+        display: block;
+    }
+
+    #hamburger-img-png {
+        opacity: 1;
+    }
+
+    #mobile-nav-bar {
+        position: fixed;
+        top: 50px;
+        left: 8px;
+        right: 8px;
+        height: 80%;
+        background-color: var(--white);
+        border: 1px solid var(--dark-blue);
+    }
+
+    #mobile-nav-bar ul li{
+        list-style: none;
+    }
+
+    #mobile-nav-bar ul li a {
+        display: block;
+        width: fit-content;
+        float: none;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-decoration: none;
+        font-size: 16pt;
+        margin-bottom: 12px;
+    }
+
+    #mobile-nav-bar ul li a:hover {
+        text-decoration: underline;
+    }
+
+    .custom-hamburger-icon {
+        background-image: url("menu-bar.png");
+        height: 10px;
+        width: 10px;
+    }
+
     /* footer */
     footer{
         height: 450px;
     }
 
+    #login-main-tag {
+        margin: 0;
+        padding-left: 10px;
+    }
+
     #login-form {
         width: 365px;
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+
+    #login-form div input {
+        font-size: 16pt;
+    }
+
+    #login-form div input::placeholder{
+        font-size: 12pt;
     }
 }
