@@ -1,4 +1,5 @@
 import express from 'express';
+import session from 'express-session';
 import cors from 'cors';
 import path from 'path';
 import {fileURLToPath} from 'url';
@@ -16,6 +17,13 @@ const __dirname = path.dirname(__filename);
 // set the view engine to EJS
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use(express.urlencoded({extended: true}));
+app.use(session({
+    secret: 'supersecretkey',
+    resave: false,
+    saveUninitialized: false
+}));
 
 
 
